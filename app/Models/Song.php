@@ -16,8 +16,9 @@ class Song extends Model
         'description',
         'image_url',
         'audio_url',
-        'released_at',
     ];
+
+    protected $dates = ['released_at'];
 
     protected function casts(): array
     {
@@ -31,6 +32,18 @@ class Song extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    // A song can belong to one genre
+    public function genre(): BelongsTo
+    {
+        return $this->belongsTo(Genre::class);
+    }
+
+    public function album(): BelongsTo
+    {
+        return $this->belongsTo(Album::class);
+    }
+
 
 
 }

@@ -14,7 +14,9 @@ class SongRequest extends FormRequest
             'description' => ['required|max:255'],
             'image_url' => ['nullable|url'],
             'audio_url' => ['nullable|url'],
-            'released_at' => ['nullable', 'date'],
+            'released_at' => ['nullable|date'],
+            'album_id' => 'required|exists:albums,id',
+            'genre_id' => 'required|exists:genres,id',
         ];
     }
 
