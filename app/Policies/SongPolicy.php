@@ -10,7 +10,7 @@ class SongPolicy
 {
     use HandlesAuthorization;
 
-    // check if user is subscribed memeber
+    // check if user is subscribed member
     public function purchase(User $user, Song $song)
     {
         if ($user->is_subscribed) {

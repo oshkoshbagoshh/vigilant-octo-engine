@@ -17,10 +17,9 @@ class TagFactory extends Factory
             'name' => $this->faker->name(),
             'description' => $this->faker->text(),
             'meta' => $this->faker->word(),
-            'foo' => $this->faker->word(),
+            'foo' => $this->faker->company(),
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
-
             'song_id' => Song::factory(),
         ];
     }
