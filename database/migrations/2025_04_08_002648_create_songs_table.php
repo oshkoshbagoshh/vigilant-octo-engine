@@ -11,7 +11,7 @@ return new class extends Migration {
             $table->id();
             $table->string('title');
             $table->string('artist');
-            $table->string('description');
+            $table->text('description');
             $table->string('image_url')->nullable();
             $table->string('audio_url')->nullable();
             $table->date('released_at');
