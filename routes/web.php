@@ -14,3 +14,6 @@ Route::get('/contact', function () {
     return view('contact');
 })->name('contact');
 
+Route::get('/songs', function () {
+ return view('songs.index');
+});

@@ -9,12 +9,12 @@ class SongRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'title' => ['required'],
-            'artist' => ['required'],
-            'description' => ['required'],
-            'image_url' => ['nullable'],
-            'audio_url' => ['nullable'],
-            'released_at' => ['required', 'date'],
+            'title' => ['required|string|max:255'],
+            'artist' => ['required|string|max:255'],
+            'description' => ['required|max:255'],
+            'image_url' => ['nullable|url'],
+            'audio_url' => ['nullable|url'],
+            'released_at' => ['nullable', 'date'],
         ];
     }
 
