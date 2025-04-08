@@ -2,24 +2,22 @@
 
 namespace Database\Factories;
 
-use App\Models\Album;
 use App\Models\Song;
+use App\Models\Tag;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Carbon;
 
-class AlbumFactory extends Factory
+class TagFactory extends Factory
 {
-    protected $model = Album::class;
+    protected $model = Tag::class;
 
     public function definition(): array
     {
         return [
-            'title' => $this->faker->word(),
-            'cover_image' => $this->faker->word(),
-            'release_date' => Carbon::now(),
+            'name' => $this->faker->name(),
             'description' => $this->faker->text(),
-            'copyright' => $this->faker->word(),
-            'price' => $this->faker->randomFloat(),
+            'meta' => $this->faker->word(),
+            'foo' => $this->faker->word(),
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
 

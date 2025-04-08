@@ -14,6 +14,8 @@ class User extends Authenticatable
     /** @use HasFactory<UserFactory> */
     use HasFactory, Notifiable;
 
+    public mixed $is_subscribed;
+
     /**
      * The attributes that are mass assignable.
      *

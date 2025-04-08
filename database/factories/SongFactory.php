@@ -14,11 +14,15 @@ class SongFactory extends Factory
     {
         return [
             'title' => $this->faker->word(),
-            'artist' => $this->faker->word(),
             'description' => $this->faker->text(),
-            'image_url' => $this->faker->imageUrl(),
-            'audio_url' => $this->faker->url(),
-            'released_at' => Carbon::now(),
+            'tags' => $this->faker->word(),
+            'genre' => $this->faker->word(),
+            'status' => $this->faker->word(),
+            'image' => $this->faker->word(),
+            'copyright' => $this->faker->word(),
+            'release_date' => Carbon::now(),
+            'file_location' => $this->faker->word(),
+            'genre_id' => $this->faker->randomNumber(),
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
         ];

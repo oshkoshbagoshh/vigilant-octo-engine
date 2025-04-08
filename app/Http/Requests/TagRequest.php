@@ -4,13 +4,15 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class GenreRequest extends FormRequest
+class TagRequest extends FormRequest
 {
     public function rules(): array
     {
         return [
             'name' => ['required'],
-            'description' => ['nullable'],
+            'description' => ['required'],
+            'meta' => ['nullable'],
+            'foo' => ['nullable'],
             'song_id' => ['required', 'exists:songs'],
         ];
     }

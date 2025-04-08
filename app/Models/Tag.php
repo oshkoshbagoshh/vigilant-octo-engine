@@ -4,20 +4,22 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-class Genre extends Model
+class Tag extends Model
 {
     use HasFactory;
 
     protected $fillable = [
         'name',
         'description',
+        'meta',
+        'foo',
         'song_id',
     ];
 
-    public function songs(): HasMany
+    public function song(): BelongsTo
     {
-        return $this->HasMany(Song::class);
+        return $this->belongsTo(Song::class);
     }
 }

@@ -4,7 +4,6 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Song extends Model
 {
@@ -12,38 +11,44 @@ class Song extends Model
 
     protected $fillable = [
         'title',
-        'artist',
         'description',
-        'image_url',
-        'audio_url',
+        'tags',
+        'genre',
+        'status',
+        'image',
+        'copyright',
+        'release_date',
+        'file_location',
     ];
-
-    protected $dates = ['released_at'];
 
     protected function casts(): array
     {
         return [
-            'released_at' => 'date',
+            'release_date' => 'date',
         ];
     }
 
-    // A song belongs to one user
-    public function user(): BelongsTo
-    {
+    // relationships
+
+
+//    TODO:
+    // One Song belongs to one user
+    public function user() {
         return $this->belongsTo(User::class);
+
+
     }
 
-    // A song can belong to one genre
-    public function genre(): BelongsTo
+
+    // one song can have many tags
+    public function tags()
     {
-        return $this->belongsTo(Genre::class);
+        return $this->belongsToMany(Tag::class);
     }
 
-    public function album(): BelongsTo
-    {
-        return $this->belongsTo(Album::class);
-    }
-
-
+    // One user can have many songs
+    /**
+     * One User can have many Songs.
+     */
 
 }
