@@ -1,8 +1,10 @@
 @extends('layouts.app')
 @section('content')
 
+
     <h2> Popular Music Channels </h2>
 
+{{--    TODO: make this a chart or HTML Table with links to songs of ours in that genre / tags --}}
 
     <ul>
         @foreach ($genres as $genre)
